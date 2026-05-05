@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{A1B2C3D4-E5F6-A7B8-C9D0-E1F2A3B4C5D6}</ProjectGuid>
+    <RootNamespace>GestaoOrdensServico.Application</RootNamespace>
+    <AssemblyName>GestaoOrdensServico.Application</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoOrdensServico.Domain\GestaoOrdensServico.Domain.csproj" />
+    <ProjectReference Include="..\GestaoOrdensServico.Infrastructure\GestaoOrdensServico.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

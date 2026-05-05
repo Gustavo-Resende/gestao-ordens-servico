@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GestaoOrdensServico</RootNamespace>
     <AssemblyName>GestaoOrdensServico</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -38,6 +38,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -46,14 +47,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="GestaoOrdensServico.Domain\GestaoOrdensServico.Domain.csproj">
+      <Project>{D0A1B2C3-D4E5-F6A7-B8C9-D0E1F2A3B4C5}</Project>
+      <Name>GestaoOrdensServico.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="GestaoOrdensServico.Infrastructure\GestaoOrdensServico.Infrastructure.csproj">
+      <Project>{B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7}</Project>
+      <Name>GestaoOrdensServico.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="GestaoOrdensServico.Application\GestaoOrdensServico.Application.csproj">
+      <Project>{A1B2C3D4-E5F6-A7B8-C9D0-E1F2A3B4C5D6}</Project>
+      <Name>GestaoOrdensServico.Application</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormClientesCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClientesCadastro.Designer.cs">
+      <DependentUpon>FormClientesCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormServicos.Designer.cs">
+      <DependentUpon>FormServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormServicosCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormServicosCadastro.Designer.cs">
+      <DependentUpon>FormServicosCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormOrdensServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormOrdensServico.Designer.cs">
+      <DependentUpon>FormOrdensServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormOrdensServicoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormOrdensServicoCadastro.Designer.cs">
+      <DependentUpon>FormOrdensServicoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRelatorio.Designer.cs">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

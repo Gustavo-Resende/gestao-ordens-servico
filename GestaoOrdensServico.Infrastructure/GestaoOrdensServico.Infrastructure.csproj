@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{B2C3D4E5-F6A7-B8C9-D0E1-F2A3B4C5D6E7}</ProjectGuid>
+    <RootNamespace>GestaoOrdensServico.Infrastructure</RootNamespace>
+    <AssemblyName>GestaoOrdensServico.Infrastructure</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="4.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoOrdensServico.Domain\GestaoOrdensServico.Domain.csproj" />
+  </ItemGroup>
+</Project>
