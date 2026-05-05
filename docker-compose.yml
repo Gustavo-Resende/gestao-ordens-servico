@@ -11,6 +11,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   pgadmin:
     image: dpage/pgadmin4
@@ -18,10 +24,33 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
     ports:
       - "8080:80"
+    configs:
+      - source: pgadmin_servers
+        target: /pgadmin4/servers.json
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
+
+configs:
+  pgadmin_servers:
+    content: |
+      {
+        "Servers": {
+          "1": {
+            "Name": "GestaoOS Local",
+            "Group": "Servers",
+            "Host": "postgres",
+            "Port": 5432,
+            "MaintenanceDB": "gestao_os",
+            "Username": "postgres",
+            "Password": "postgres",
+            "SSLMode": "prefer"
+          }
+        }
+      }
 
 volumes:
   postgres_data:
