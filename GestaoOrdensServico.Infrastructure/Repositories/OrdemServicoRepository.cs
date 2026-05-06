@@ -106,8 +106,7 @@ namespace GestaoOrdensServico.Infrastructure.Repositories
             }
         }
 
-        public List<OrdemServico> ListarPaginado(
-            DateTime? inicio, DateTime? fim, Guid? clienteId, string status,
+        public List<OrdemServico> ListarPaginado(DateTime? inicio, DateTime? fim, Guid? clienteId, string status,
             int pagina, int tamanhoPagina, out int total)
         {
             var conditions = new List<string>();
@@ -116,20 +115,23 @@ namespace GestaoOrdensServico.Infrastructure.Repositories
             if (clienteId.HasValue)           conditions.Add("os.cliente_id = @clienteId");
             if (!string.IsNullOrEmpty(status)) conditions.Add("os.status = @status::status_os");
 
-            var where     = conditions.Count > 0 ? "WHERE " + string.Join(" AND ", conditions) : "";
-            var baseQuery = @"
-                FROM ordens_servico os
-                INNER JOIN clientes c ON c.id = os.cliente_id "
-                + where;
+            var where = conditions.Count > 0 ? "WHERE " + string.Join(" AND ", conditions) : "";
 
-            var sqlCount = "SELECT COUNT(1) " + baseQuery;
-            var sqlSelect = @"
+            var sqlCount = $@"
+                SELECT COUNT(1)
+                FROM ordens_servico os
+                INNER JOIN clientes c ON c.id = os.cliente_id
+                {where}";
+
+            var sqlSelect = $@"
                 SELECT os.id, os.cliente_id, c.nome AS cliente_nome,
                        os.data_abertura, os.data_conclusao, os.status,
-                       os.observacao, os.valor_total, os.versao "
-                + baseQuery
-                + " ORDER BY os.data_abertura DESC"
-                + " LIMIT @limite OFFSET @offset";
+                       os.observacao, os.valor_total, os.versao
+                FROM ordens_servico os
+                INNER JOIN clientes c ON c.id = os.cliente_id
+                {where}
+                ORDER BY os.data_abertura DESC
+                LIMIT @limite OFFSET @offset";
 
             using (var connection = _factory.CreateConnection())
             {
@@ -424,9 +426,7 @@ namespace GestaoOrdensServico.Infrastructure.Repositories
                 DataConclusao = reader.IsDBNull(reader.GetOrdinal("data_conclusao"))
                                     ? (DateTime?)null
                                     : reader.GetDateTime(reader.GetOrdinal("data_conclusao")),
-                Status        = (StatusOs)Enum.Parse(
-                                    typeof(StatusOs),
-                                    reader.GetString(reader.GetOrdinal("status"))),
+                Status        = (StatusOs)Enum.Parse(typeof(StatusOs), reader.GetString(reader.GetOrdinal("status"))),
                 Observacao    = reader.IsDBNull(reader.GetOrdinal("observacao"))
                                     ? null
                                     : reader.GetString(reader.GetOrdinal("observacao")),
