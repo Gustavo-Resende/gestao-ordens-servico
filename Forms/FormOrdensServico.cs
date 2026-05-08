@@ -97,7 +97,7 @@ namespace GestaoOrdensServico.Forms
         private void Pesquisar()
         {
             DateTime inicio = dtpInicio.Value.Date;
-            DateTime fim = dtpFim.Value.Date;
+            DateTime fim = dtpFim.Value.Date.AddDays(1).AddSeconds(-1);
 
             string statusTexto = cmbStatus.SelectedItem?.ToString();
             string status = string.IsNullOrEmpty(statusTexto) ? null : statusTexto;
