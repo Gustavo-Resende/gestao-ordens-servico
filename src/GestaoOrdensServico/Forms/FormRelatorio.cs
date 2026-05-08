@@ -77,8 +77,6 @@ namespace GestaoOrdensServico.Forms
                 }
 
                 _dadosRelatorio = resultado.Dados;
-                MessageBox.Show($"{resultado.Dados.Count} OS encontradas. Clique em Exportar PDF para gerar o relatório.",
-                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

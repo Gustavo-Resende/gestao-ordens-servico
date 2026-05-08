@@ -231,6 +231,9 @@ namespace GestaoOrdensServico.Forms
 
             _osAtual = resultado.Dados;
 
+            btnAlterarStatus.Enabled = _osAtual.Status != StatusOs.Concluida && _osAtual.Status != StatusOs.Cancelada;
+            btnAdicionarItem.Enabled = _osAtual.Status != StatusOs.Concluida && _osAtual.Status != StatusOs.Cancelada;
+
             lblStatus.Text = _osAtual.Status.ToString();
             lblValorTotal.Text = _osAtual.ValorTotal.ToString("C");
 
