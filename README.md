@@ -17,14 +17,20 @@ Sistema desktop de gestão de ordens de serviço com controle financeiro, audito
 ## Arquitetura
 
 O projeto segue os princípios do Clean Architecture com separação em 4 camadas:
+
+```text
 src/
 ├── GestaoOrdensServico/              ← UI (Windows Forms)
 ├── GestaoOrdensServico.Application/  ← Services e regras de negócio
 ├── GestaoOrdensServico.Domain/       ← Entidades e enums
 └── GestaoOrdensServico.Infrastructure/ ← Repositories, conexão e log
+```
 
 **Fluxo de uma requisição:**
+
+```text
 Form → Service → Repository → PostgreSQL
+```
 
 - **Domain** — entidades puras sem dependências externas
 - **Application** — services com regras de negócio, Result Pattern sem bibliotecas externas
@@ -92,11 +98,13 @@ Toda alteração relevante gera um registro na tabela `auditoria` com:
 
 ### Pré-requisitos
 
-- Visual Studio 2022+
-- .NET Framework 4.6.1 Developer Pack
-- Docker Desktop
-- SQLSysClrTypes.msi (x64) — SQL Server 2014 Feature Pack
-- Microsoft Report Viewer 2015 Runtime
+> ⚠️ Instale na ordem abaixo — o ReportViewer depende do SQLSysClrTypes.
+
+1. Visual Studio 2022+
+2. .NET Framework 4.6.1 Developer Pack
+3. Docker Desktop
+4. SQLSysClrTypes.msi (x64) — disponível no SQL Server 2014 Feature Pack da Microsoft
+5. Microsoft Report Viewer 2015 Runtime — disponível no site da Microsoft
 
 ### 1. Subir o banco de dados
 
