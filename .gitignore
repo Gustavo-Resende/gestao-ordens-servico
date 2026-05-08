@@ -266,6 +266,10 @@ ServiceFabricBackup/
 *.ldf
 *.ndf
 
+# Documentação interna de desenvolvimento
+CLAUDE.md
+PLAN.md
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
