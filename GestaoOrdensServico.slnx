@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="GestaoOrdensServico.csproj" Id="6c740d24-ad40-4092-89bb-3f4af7f22908" />
-  <Project Path="GestaoOrdensServico.Domain\GestaoOrdensServico.Domain.csproj" Id="d0a1b2c3-d4e5-f6a7-b8c9-d0e1f2a3b4c5" />
-  <Project Path="GestaoOrdensServico.Application\GestaoOrdensServico.Application.csproj" Id="a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6" />
-  <Project Path="GestaoOrdensServico.Infrastructure\GestaoOrdensServico.Infrastructure.csproj" Id="b2c3d4e5-f6a7-b8c9-d0e1-f2a3b4c5d6e7" />
+  <Project Path="src\GestaoOrdensServico\GestaoOrdensServico.csproj" Id="6c740d24-ad40-4092-89bb-3f4af7f22908" />
+  <Project Path="src\GestaoOrdensServico.Domain\GestaoOrdensServico.Domain.csproj" Id="d0a1b2c3-d4e5-f6a7-b8c9-d0e1f2a3b4c5" />
+  <Project Path="src\GestaoOrdensServico.Application\GestaoOrdensServico.Application.csproj" Id="a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6" />
+  <Project Path="src\GestaoOrdensServico.Infrastructure\GestaoOrdensServico.Infrastructure.csproj" Id="b2c3d4e5-f6a7-b8c9-d0e1-f2a3b4c5d6e7" />
 </Solution>
