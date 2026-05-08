@@ -95,7 +95,7 @@ Toda alteração relevante gera um registro na tabela `auditoria` com:
 - Visual Studio 2022+
 - .NET Framework 4.6.1 Developer Pack
 - Docker Desktop
-- SQLSysClrTypes.msi (x64) — SQL Server 2014 Feature Pack
+- SQLSysClrTypes.msi (x64) - dependência do ReportViewer 2015, disponível no SQL Server 2014 Feature Pack da Microsoft
 - Microsoft Report Viewer 2015 Runtime
 
 ### 1. Subir o banco de dados
