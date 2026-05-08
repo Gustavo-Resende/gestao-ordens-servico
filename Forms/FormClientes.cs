@@ -81,18 +81,23 @@ namespace GestaoOrdensServico.Forms
                 return;
             }
 
+            dgvClientes.AutoGenerateColumns = true;
             dgvClientes.DataSource = resultado.Dados;
 
-            if (dgvClientes.Columns.Count == 0) return;
-
-            dgvClientes.Columns["Id"].Visible           = false;
-            dgvClientes.Columns["Nome"].HeaderText      = "Nome";
-            dgvClientes.Columns["Documento"].HeaderText = "Documento";
-            dgvClientes.Columns["Tipo"].HeaderText      = "Tipo";
-            dgvClientes.Columns["Email"].HeaderText     = "E-mail";
-            dgvClientes.Columns["Telefone"].HeaderText  = "Telefone";
-            dgvClientes.Columns["Ativo"].HeaderText     = "Ativo";
-
+            if (dgvClientes.Columns.Contains("Id"))
+                dgvClientes.Columns["Id"].Visible = false;
+            if (dgvClientes.Columns.Contains("Nome"))
+                dgvClientes.Columns["Nome"].HeaderText = "Nome";
+            if (dgvClientes.Columns.Contains("Documento"))
+                dgvClientes.Columns["Documento"].HeaderText = "Documento";
+            if (dgvClientes.Columns.Contains("Tipo"))
+                dgvClientes.Columns["Tipo"].HeaderText = "Tipo";
+            if (dgvClientes.Columns.Contains("Email"))
+                dgvClientes.Columns["Email"].HeaderText = "E-mail";
+            if (dgvClientes.Columns.Contains("Telefone"))
+                dgvClientes.Columns["Telefone"].HeaderText = "Telefone";
+            if (dgvClientes.Columns.Contains("Ativo"))
+                dgvClientes.Columns["Ativo"].HeaderText = "Ativo";
             if (dgvClientes.Columns.Contains("DataCadastro"))
                 dgvClientes.Columns["DataCadastro"].Visible = false;
         }

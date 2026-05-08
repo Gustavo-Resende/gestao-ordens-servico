@@ -35,7 +35,7 @@ namespace GestaoOrdensServico.Forms
 
         private void btnOrdensServico_Click(object sender, System.EventArgs e)
         {
-            new FormOrdensServico(_ordemServicoService, _clienteService).ShowDialog();
+            new FormOrdensServico(_ordemServicoService, _clienteService, _servicoService).ShowDialog();
         }
 
         private void btnRelatorio_Click(object sender, System.EventArgs e)

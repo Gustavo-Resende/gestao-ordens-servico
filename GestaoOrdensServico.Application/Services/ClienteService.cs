@@ -144,11 +144,12 @@ namespace GestaoOrdensServico.Application.Services
             try
             {
                 var lista = _clienteRepository.Listar(nome, documento, ativo);
+                _logger.LogInfo($"Listar clientes — resultado.Count: {lista?.Count ?? -1}");
                 return ResultadoOperacao<List<Cliente>>.Sucesso(lista);
             }
             catch (Exception ex)
             {
-                _logger.LogErro("Erro ao listar clientes.", ex);
+                _logger.LogErro("Erro no Listar de clientes", ex);
                 return ResultadoOperacao<List<Cliente>>.Falha("Erro inesperado ao listar clientes.");
             }
         }

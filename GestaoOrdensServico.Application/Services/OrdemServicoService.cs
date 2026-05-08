@@ -65,6 +65,35 @@ namespace GestaoOrdensServico.Application.Services
             }
         }
 
+        public ResultadoOperacao<bool> Atualizar(Guid osId, string observacao, int versao)
+        {
+            var os = _ordemServicoRepository.BuscarPorId(osId);
+            if (os == null)
+                return ResultadoOperacao<bool>.Falha("OS não encontrada.");
+
+            if (os.Status == StatusOs.Concluida || os.Status == StatusOs.Cancelada)
+                return ResultadoOperacao<bool>.Falha("Não é possível editar OS Concluída ou Cancelada.");
+
+            os.Observacao = string.IsNullOrWhiteSpace(observacao) ? null : observacao.Trim();
+            os.Versao = versao;
+
+            try
+            {
+                _ordemServicoRepository.Atualizar(os);
+                _logger.LogInfo($"OS {osId} atualizada.");
+                return ResultadoOperacao<bool>.Sucesso(true);
+            }
+            catch (Exception ex) when (ex.Message.Contains("alterada por outro usuário"))
+            {
+                return ResultadoOperacao<bool>.Falha(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogErro("Erro ao atualizar OS.", ex);
+                return ResultadoOperacao<bool>.Falha("Erro inesperado ao atualizar OS.");
+            }
+        }
+
         public ResultadoOperacao<ItemOs> AdicionarItem(Guid osId, Guid servicoId, int quantidade)
         {
             if (quantidade < 1)

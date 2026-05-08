@@ -106,6 +106,9 @@ namespace GestaoOrdensServico.Infrastructure.Repositories
             var sql   = "SELECT id, nome, documento, tipo, email, telefone, data_cadastro, ativo "
                       + "FROM clientes " + where + " ORDER BY nome";
 
+            System.Diagnostics.Debug.WriteLine($"[ClienteRepository.Listar] SQL: {sql}");
+            System.Diagnostics.Debug.WriteLine($"[ClienteRepository.Listar] Params — nome={nome}, documento={documento}, ativo={ativo?.ToString() ?? "null"}");
+
             using (var connection = _factory.CreateConnection())
             {
                 connection.Open();
@@ -121,6 +124,8 @@ namespace GestaoOrdensServico.Infrastructure.Repositories
                         while (reader.Read())
                             lista.Add(MapearCliente(reader));
                     }
+
+                    System.Diagnostics.Debug.WriteLine($"[ClienteRepository.Listar] Linhas retornadas: {lista.Count}");
                     return lista;
                 }
             }
