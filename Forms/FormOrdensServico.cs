@@ -21,6 +21,13 @@ namespace GestaoOrdensServico.Forms
             _ordemServicoService = ordemServicoService;
             _clienteService = clienteService;
             _servicoService = servicoService;
+            btnAbrir.Enabled = false;
+            dgvOrdensServico.SelectionChanged += dgvOrdensServico_SelectionChanged;
+        }
+
+        private void dgvOrdensServico_SelectionChanged(object sender, System.EventArgs e)
+        {
+            btnAbrir.Enabled = dgvOrdensServico.CurrentRow != null;
         }
 
         private void FormOrdensServico_Load(object sender, System.EventArgs e)

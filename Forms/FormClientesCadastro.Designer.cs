@@ -31,88 +31,88 @@ namespace GestaoOrdensServico.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Location = new System.Drawing.Point(20, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome";
+            this.label1.Text = "Nome:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(67, 25);
+            this.txtNome.Location = new System.Drawing.Point(100, 17);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(101, 20);
+            this.txtNome.Size = new System.Drawing.Size(280, 20);
             this.txtNome.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 25);
+            this.label2.Location = new System.Drawing.Point(20, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Documento";
+            this.label2.Text = "Documento:";
             // 
             // txtDocumento
             // 
-            this.txtDocumento.Location = new System.Drawing.Point(253, 22);
+            this.txtDocumento.Location = new System.Drawing.Point(100, 52);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(100, 20);
+            this.txtDocumento.Size = new System.Drawing.Size(120, 20);
             this.txtDocumento.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 69);
+            this.label3.Location = new System.Drawing.Point(240, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Tipo";
+            this.label3.Text = "Tipo:";
             // 
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(65, 69);
+            this.cmbTipo.Location = new System.Drawing.Point(275, 52);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(105, 21);
             this.cmbTipo.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 73);
+            this.label4.Location = new System.Drawing.Point(20, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "E-mail";
+            this.label4.Text = "E-mail:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(253, 70);
+            this.txtEmail.Location = new System.Drawing.Point(100, 87);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(280, 20);
             this.txtEmail.TabIndex = 7;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(86, 114);
+            this.txtTelefone.Location = new System.Drawing.Point(100, 122);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(120, 20);
             this.txtTelefone.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 117);
+            this.label5.Location = new System.Drawing.Point(20, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Telefone";
+            this.label5.Text = "Telefone:";
             // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(215, 117);
+            this.chkAtivo.Location = new System.Drawing.Point(240, 124);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);
             this.chkAtivo.TabIndex = 10;
@@ -121,9 +121,9 @@ namespace GestaoOrdensServico.Forms
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(121, 181);
+            this.btnSalvar.Location = new System.Drawing.Point(100, 165);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(100, 32);
             this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -131,9 +131,9 @@ namespace GestaoOrdensServico.Forms
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(215, 181);
+            this.btnCancelar.Location = new System.Drawing.Point(215, 165);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 32);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -143,7 +143,8 @@ namespace GestaoOrdensServico.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 341);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(404, 281);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.chkAtivo);

@@ -21,6 +21,8 @@ namespace GestaoOrdensServico.Forms
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -30,33 +32,34 @@ namespace GestaoOrdensServico.Forms
             // 
             // txtFiltroNome
             // 
-            this.txtFiltroNome.Location = new System.Drawing.Point(69, 15);
+            this.txtFiltroNome.Location = new System.Drawing.Point(55, 22);
             this.txtFiltroNome.Name = "txtFiltroNome";
-            this.txtFiltroNome.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltroNome.Size = new System.Drawing.Size(130, 20);
             this.txtFiltroNome.TabIndex = 0;
             // 
             // txtFiltroDocumento
             // 
-            this.txtFiltroDocumento.Location = new System.Drawing.Point(189, 15);
+            this.txtFiltroDocumento.Location = new System.Drawing.Point(270, 22);
             this.txtFiltroDocumento.Name = "txtFiltroDocumento";
-            this.txtFiltroDocumento.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltroDocumento.Size = new System.Drawing.Size(130, 20);
             this.txtFiltroDocumento.TabIndex = 1;
             // 
             // chkFiltroAtivo
             // 
             this.chkFiltroAtivo.AutoSize = true;
-            this.chkFiltroAtivo.Location = new System.Drawing.Point(312, 18);
+            this.chkFiltroAtivo.Location = new System.Drawing.Point(415, 24);
             this.chkFiltroAtivo.Name = "chkFiltroAtivo";
-            this.chkFiltroAtivo.Size = new System.Drawing.Size(50, 17);
+            this.chkFiltroAtivo.Size = new System.Drawing.Size(100, 17);
             this.chkFiltroAtivo.TabIndex = 2;
-            this.chkFiltroAtivo.Text = "Ativo";
+            this.chkFiltroAtivo.Text = "Somente Ativos";
             this.chkFiltroAtivo.UseVisualStyleBackColor = true;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(388, 12);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnPesquisar.Location = new System.Drawing.Point(580, 20);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 30);
             this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -64,9 +67,10 @@ namespace GestaoOrdensServico.Forms
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(155, 10);
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(130, 10);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(100, 30);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -74,19 +78,22 @@ namespace GestaoOrdensServico.Forms
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(266, 10);
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Location = new System.Drawing.Point(240, 10);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(100, 30);
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(59, 10);
+            this.btnNovo.Location = new System.Drawing.Point(20, 10);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.Size = new System.Drawing.Size(100, 30);
             this.btnNovo.TabIndex = 8;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -94,6 +101,9 @@ namespace GestaoOrdensServico.Forms
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnPesquisar);
             this.panel1.Controls.Add(this.txtFiltroNome);
             this.panel1.Controls.Add(this.txtFiltroDocumento);
@@ -101,28 +111,56 @@ namespace GestaoOrdensServico.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 52);
+            this.panel1.Size = new System.Drawing.Size(784, 80);
             this.panel1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label2.Location = new System.Drawing.Point(200, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Documento:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Nome:";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.btnExcluir);
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnNovo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 416);
+            this.panel2.Location = new System.Drawing.Point(0, 411);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 45);
+            this.panel2.Size = new System.Drawing.Size(784, 50);
             this.panel2.TabIndex = 10;
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvClientes.Location = new System.Drawing.Point(0, 52);
+            this.dgvClientes.Location = new System.Drawing.Point(0, 80);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(784, 364);
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(784, 331);
             this.dgvClientes.TabIndex = 11;
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
             // 
             // FormClientes
             // 
@@ -154,5 +192,7 @@ namespace GestaoOrdensServico.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

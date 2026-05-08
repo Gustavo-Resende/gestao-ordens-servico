@@ -12,6 +12,15 @@ namespace GestaoOrdensServico.Forms
         {
             InitializeComponent();
             _clienteService = clienteService;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+        }
+
+        private void dgvClientes_SelectionChanged(object sender, System.EventArgs e)
+        {
+            bool temSeleção = dgvClientes.CurrentRow != null;
+            btnEditar.Enabled = temSeleção;
+            btnExcluir.Enabled = temSeleção;
         }
 
         private void FormClientes_Load(object sender, System.EventArgs e)

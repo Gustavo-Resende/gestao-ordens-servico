@@ -27,6 +27,18 @@ namespace GestaoOrdensServico.Forms
             _clienteService = clienteService;
             _servicoService = servicoService;
             _ordemServico = ordemServico;
+            btnAdicionarItem.Enabled = false;
+            btnRemoverItem.Enabled = false;
+            btnAlterarStatus.Enabled = false;
+            dgvItens.SelectionChanged += dgvItens_SelectionChanged;
+        }
+
+        private void dgvItens_SelectionChanged(object sender, System.EventArgs e)
+        {
+            btnRemoverItem.Enabled = dgvItens.CurrentRow != null
+                && _osAtual != null
+                && _osAtual.Status != StatusOs.Concluida
+                && _osAtual.Status != StatusOs.Cancelada;
         }
 
         private void FormOrdensServicoCadastro_Load(object sender, System.EventArgs e)

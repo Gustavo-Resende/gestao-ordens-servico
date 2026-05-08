@@ -12,6 +12,13 @@ namespace GestaoOrdensServico.Forms
         {
             InitializeComponent();
             _servicoService = servicoService;
+            btnEditar.Enabled = false;
+            dgvServicos.SelectionChanged += dgvServicos_SelectionChanged;
+        }
+
+        private void dgvServicos_SelectionChanged(object sender, System.EventArgs e)
+        {
+            btnEditar.Enabled = dgvServicos.CurrentRow != null;
         }
 
         private void FormServicos_Load(object sender, System.EventArgs e)
