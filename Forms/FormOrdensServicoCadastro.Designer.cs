@@ -158,7 +158,6 @@ namespace GestaoOrdensServico.Forms
             // 
             // btnAlterarStatus
             // 
-            this.btnAlterarStatus.Enabled = false;
             this.btnAlterarStatus.Location = new System.Drawing.Point(240, 43);
             this.btnAlterarStatus.Name = "btnAlterarStatus";
             this.btnAlterarStatus.Size = new System.Drawing.Size(110, 28);

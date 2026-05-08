@@ -84,6 +84,12 @@ namespace GestaoOrdensServico.Forms
                 ConfigurarColunasItens();
 
                 cmbCliente.Enabled = false;
+
+                if (_osAtual.Status != StatusOs.Concluida && _osAtual.Status != StatusOs.Cancelada)
+                {
+                    btnAdicionarItem.Enabled = true;
+                    btnAlterarStatus.Enabled = true;
+                }
             }
             else
             {
@@ -119,7 +125,7 @@ namespace GestaoOrdensServico.Forms
                 lblValorTotal.Text = _osAtual.ValorTotal.ToString("C");
 
                 btnAdicionarItem.Enabled = true;
-                btnRemoverItem.Enabled = true;
+                btnRemoverItem.Enabled = false;
                 btnAlterarStatus.Enabled = true;
                 cmbCliente.Enabled = false;
             }
